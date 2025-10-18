@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Santhosh Kumar | Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header glass">
+    <nav class="container nav">
+      <a href="#" class="logo">Santhosh</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="toggle-mode" id="themeToggle" aria-label="Toggle dark/light mode">🌓</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left">
+        <h1>Hi, I'm <span>Santhosh Kumar</span></h1>
+        <h2 class="role"><span id="typewriter"></span></h2>
+        <p class="intro fade-in">Aspiring Software Engineer dedicated to building modern, beautiful web apps.</p>
+        <div class="hero-actions">
+          <a class="btn primary lift" href="#projects">See My Work</a>
+          <a class="btn lift" href="#contact">Contact</a>
+        </div>
+        <div class="meta fade-in">
+          <span>🎓 Varuvan Vadivelan Institute of Technology — B.E., CSE (CGPA 8.2)</span>
+        </div>
+        <div class="socials fade-in">
+          <a class="social-icon" href="https://www.linkedin.com/in/santhoshkumar4321/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social-icon" href="https://github.com/S4a3/" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-icon" href="https://www.instagram.com/chai_biscuit_boy_/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-right fade-in">
+        <div class="photo-wrap glass">
+          <img src="assets/mine.jpg" alt="Santhosh Kumar" id="profilePhoto">
+        </div>
+      </div>
+    </section>
+
+    <section class="about container glass" id="about">
+      <h2>About Me</h2>
+      <p class="about-text">I’m an aspiring Software Engineer with a strong foundation in computer science and hands-on experience building full-stack web applications. I’m passionate about creating efficient, user-friendly digital solutions and continuously enhancing my technical skills through real-world projects. My goal is to contribute to impactful software development and grow as a full-stack developer.</p>
+    </section>
+
+    <section class="skills container glass" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <span>Java</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="90"></div></div>
+        </div>
+        <div class="skill">
+          <span>Python</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="85"></div></div>
+        </div>
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
+        </div>
+        <div class="skill">
+          <span>HTML/CSS</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="95"></div></div>
+        </div>
+        <div class="skill">
+          <span>React (basics)</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="70"></div></div>
+        </div>
+        <div class="skill">
+          <span>Django</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="80"></div></div>
+        </div>
+        <div class="skill">
+          <span>Flask</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="75"></div></div>
+        </div>
+        <div class="skill">
+          <span>SQLite/MySQL</span>
+          <div class="skill-bar-bg"><div class="skill-bar" data-width="85"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects container glass" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="card tilt slide-in">
+          <h3>Crop and Fertilizer Recommendation</h3>
+          <p>ML-backed system to suggest crops and fertilizers based on soil and weather inputs.</p>
+          <a class="link" href="https://github.com/S4a3/" target="_blank">View on GitHub</a>
+        </article>
+        <article class="card tilt slide-in">
+          <h3>Medical Shop</h3>
+          <p>Full-stack medical store with product listing, cart, and checkout flows.</p>
+          <a class="link" href="https://github.com/S4a3/" target="_blank">View on GitHub</a>
+        </article>
+        <article class="card tilt slide-in">
+          <h3>Weather API</h3>
+          <p>React + backend app that shows current weather based on user input using public APIs.</p>
+          <a class="link" href="https://github.com/S4a3/" target="_blank">View on GitHub</a>
+        </article>
+        <article class="card tilt slide-in">
+          <h3>Chat Application</h3>
+          <p>Real-time chat app built with React (frontend) and Flask (backend).</p>
+          <a class="link" href="https://github.com/S4a3/" target="_blank">View on GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact container glass" id="contact">
+      <h2>Contact</h2>
+      <p>If you’d like to connect, email me at <a href="mailto:santhoshkumarm170@gmail.com">santhoshkumarm170@gmail.com</a>.</p>
+      <div class="contact-actions">
+        <a class="btn primary lift" href="mailto:santhoshkumarm170@gmail.com">Send Email</a>
+      </div>
+      <div class="small-note">
+        <strong>CGPA:</strong> 8.2 &nbsp; • &nbsp; <strong>College:</strong> Varuvan Vadivelan Institute of Technology
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer glass">
+    <div class="container">Built with ❤️ by Santhosh Kumar M — © <span id="year"></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
