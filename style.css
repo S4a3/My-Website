@@ -144,11 +144,14 @@ html, body {
   justify-content: center;
 }
 .photo-wrap img {
-  width: 100%; height: 100%;
+  
+  width: 120%; height: 120%;
+  object-position:center 20%
   object-fit: cover; display: block;
   border-radius: 50%;
   border: 6px solid rgba(255,255,255,0.18);
   box-shadow: 0 0 0 8px rgba(11, 155, 255, 0.05);
+  
 }
 
 /* Typewriter */
@@ -229,3 +232,41 @@ section.glass { margin-top: 2.1rem; border-radius: 20px; padding: 2rem; box-shad
 /* Dark Mode Button (optional enhancer) */
 .toggle-mode { transition: background 0.23s, color 0.23s, transform 0.12s; border-radius: 40px; }
 .toggle-mode:active { background: var(--accent); color: #fff; }
+
+
+/* Demo Link */
+.demo {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+.card {
+  position: relative;
+  padding-bottom: 60px; /* Space for the demo link */
+}
+
+.card .link {
+  position: absolute;
+  bottom: 15px;
+  left:15px;
+  background:#eaf3ff;
+  color: #0057b7;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.card  .demo {
+  position: absolute;
+  bottom: 15px;
+  right:15px;
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+
+

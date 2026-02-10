@@ -1,8 +1,9 @@
 // Typewriter effect for your role
 const roles = [
-  'Software Engineer',
-  'Full Stack Web Developer',
-  'Cloud Enthusiast',
+  'JAVA Full Stack Web Developer',
+  'Spring Boot Enthusiast',
+  'Angular SpringBoot Developer',
+  'Spring MVC Developer',
   'Vibe Coder'
 ];
 let currentRole = 0, currentChar = 0, typewriterTarget = document.getElementById('typewriter');
