@@ -13,7 +13,7 @@
 }
 
 [data-theme="dark"] {
-  --bg: linear-gradient(120deg, #171d23 0%, #262e37 100%);
+  /* --bg: linear-gradient(120deg, #171d23 0%, #262e37 100%); */
   --glass-bg: rgba(32,34,44,0.60);
   --card: #222632;
   --accent: #009df7;
@@ -27,18 +27,110 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, Arial;
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   transition: background 0.5s, color 0.5s;
 }
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(10, 15, 44, 0.6); dark overlay */
+  z-index: -1;
+}
+body[data-theme="dark"]::before {
+  background: rgba(10, 15, 44, 0.6);
+}
+
+body[data-theme="light"]::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
 
 .glass {
-  background: var(--glass-bg);
+  /* background: var(--glass-bg);
   box-shadow: 0 6px 24px rgba(0,0,0,0.10);
   backdrop-filter: blur(var(--glass-blur));
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.18); */
+
+  background: rgba(15, 23, 42, 0.75); /* darker glass */
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
+/* DARK MODE (default) */
+[data-theme="dark"] .glass {
+  background: rgba(15, 23, 42, 0.75);
+  color: #e2e8f0;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111827;
+}
+
+/* DARK */
+[data-theme="dark"] {
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+/* LIGHT */
+[data-theme="light"] {
+  --text: #111827;
+  --muted: #4b5563;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] .hero-left h1 {
+  color: #111;
+}
+
+[data-theme="light"] .intro {
+  color: #374151;
+}
+
+[data-theme="light"] .about-text {
+  color: #374151;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] .card {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .btn {
+  background: #f3f4f6;
+  color: #111;
+}
+
+[data-theme="light"] .btn.primary {
+  background: #007bff;
+  color: white;
+}
+
+[data-theme="light"] .hero-left h1 {
+  color: #111;
+}
+
+[data-theme="light"] .intro {
+  color: #374151;
+}
+
+[data-theme="light"] .about-text {
+  color: #374151;
+}
+
+
+
+
+
 
 /* Header/Nav  */
 .site-header {
@@ -109,18 +201,20 @@ html, body {
 .hero-left h1 {
   font-size: 2.4rem;
   margin: 0.2rem 0;
+  color: #ffffff;
 }
-.hero-left h1 span { color: var(--accent); }
-.role { color: var(--muted); margin-top: 0.45rem; font-size: 1.1em; min-height: 2.2em; }
-.intro { line-height: 1.5; color: #333; }
+.hero-left h1 span { color: #00bfff;
+  text-shadow: 0 0 10px rgba(0,191,255,0.6); }
+.role { color: #cbd5e1; margin-top: 0.45rem; font-size: 1.1em; min-height: 2.2em; }
+.intro { line-height: 1.5; color: #94a3b8; }
 .hero-actions { margin-top: 1.3rem; display: flex; gap: 1rem; }
 .btn {
   padding: 0.65rem 1.2rem;
   font-size: 1rem;
   border-radius: 10px;
   border: none;
-  background: var(--card);
-  color: var(--accent-dark);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
   letter-spacing: 0.02em;
   font-weight: 600;
   text-decoration: none;
@@ -128,7 +222,7 @@ html, body {
   box-shadow: 0 2px 12px rgba(32,90,255,0.062);
   cursor: pointer;
 }
-.btn.primary { background: var(--accent); color: #fff; }
+.btn.primary {background: linear-gradient(90deg, #00bfff, #007bff); color: #fff; }
 .lift:hover { transform: translateY(-4px) scale(1.045); box-shadow: 0 6px 30px rgba(32,90,255,0.13); }
 
 /* Glassy Hero Image */
@@ -177,7 +271,7 @@ section.glass { margin-top: 2.1rem; border-radius: 20px; padding: 2rem; box-shad
 
 /* About */
 .about h2, .skills h2, .projects h2, .contact h2 { margin-top: 0; }
-.about-text { color: #333; }
+.about-text { color: #cbd5e1; }
 
 /* Skills and Animated Bars */
 .skills-grid { display: flex; flex-wrap: wrap; gap: 1.3rem; }
@@ -266,6 +360,24 @@ section.glass { margin-top: 2.1rem; border-radius: 20px; padding: 2rem; box-shad
   padding: 8px 12px;
   text-decoration: none;
   border-radius: 6px;
+}
+
+/* animation */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* keeps it behind everything */
+  top: 0;
+  left: 0;
+  /* background: #0a0f2c; dark blue background */
+}
+body[data-theme="dark"] #particles-js {
+  background: #0a0f2c; /* dark */
+}
+
+body[data-theme="light"] #particles-js {
+  background: #f6f8fb; /* light */
 }
 
 

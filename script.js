@@ -1,3 +1,5 @@
+
+
 // Typewriter effect for your role
 const roles = [
   'Java Full Stack Developer',
@@ -82,13 +84,57 @@ document.addEventListener('DOMContentLoaded', () => {
 const themeBtn = document.getElementById('themeToggle');
 function toggleTheme() {
   const curr = document.documentElement.getAttribute('data-theme');
-  const next = curr === 'dark' ? null : 'dark';
+  const next = curr === 'dark' ? 'light' : 'dark';
+
   document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next ? 'dark' : 'light');
+  localStorage.setItem('theme', next);
+
+  // 🔥 reload particles based on theme
+  loadParticles(next);
 }
+
 // On load, keep last theme
 document.addEventListener('DOMContentLoaded', () => {
-  const theme = localStorage.getItem('theme');
-  if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  const theme = localStorage.getItem('theme') || 'dark';
+
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // 🔥 load particles with correct theme
+  loadParticles(theme);
 });
 if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+
+function loadParticles(theme) {
+
+  let bgColor = theme === "dark" ? "#0a0f2c" : "#f6f8fb";
+  // let particleColor = theme === "dark" ? "#00bfff" : "#007bff";
+  let particleColor = theme === "dark" ? "#00bfff" : "#3b82f6";
+
+
+  // change background
+  document.getElementById("particles-js").style.background = bgColor;
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 70 },
+      color: { value: particleColor },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: particleColor,
+        opacity: 0.4,
+        width: 1
+      },
+      move: { enable: true, speed: 2 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" }
+      }
+    },
+    retina_detect: true
+  });
+}
